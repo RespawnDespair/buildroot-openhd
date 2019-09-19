@@ -1,1 +1,2 @@
 source "package/openhd/openhd-core/Config.in"
+source "package/openhd/openhd-rtl88xx/Config.in"

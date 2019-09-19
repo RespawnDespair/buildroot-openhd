@@ -1,0 +1,10 @@
+comment "rtl88xx needs a Linux kernel to be built"
+	depends on !BR2_LINUX_KERNEL
+
+config BR2_PACKAGE_OPENHD_RTL88XX
+	bool "openhd-rtl88xx"
+	depends on BR2_LINUX_KERNEL
+	help
+	  Install patched RTL88xx drivers from aircrack-ng
+
+	  https://github.com/HD-FPV/Open.HD
