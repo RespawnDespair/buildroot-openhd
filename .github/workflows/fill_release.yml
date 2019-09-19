@@ -1,6 +1,9 @@
-on: release
-  types: [created, edited]
-name: Handle Release
+on: 
+  release:
+    types: [created, edited]
+
+    
+name: Fill Current Release
 jobs:
   generate:
     name: Create release-artifacts
