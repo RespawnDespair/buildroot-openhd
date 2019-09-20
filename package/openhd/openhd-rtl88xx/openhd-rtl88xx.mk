@@ -16,7 +16,11 @@ endef
 define OPENHD_RTL88XX_INSTALL_TARGET_CMDS
 	mkdir -p $(TARGET_DIR)/lib/modules/$(LINUX_VERSION_PROBED)/kernel/drivers/net/wireless/
 	$(INSTALL) -p -m 644 $(@D)/88XXau.ko $(TARGET_DIR)/lib/modules/$(LINUX_VERSION_PROBED)/kernel/drivers/net/wireless/
-	# Add this to the default modprobe S99modules if required 
+	# Add this to the default modprobe /etc/init.d/S99modules if required 
+  	touch $(TARGET_DIR)/etc/init.d/S99modules 
+	echo "modprobe 88XXau" >> $(TARGET_DIR)/etc/init.d/S99modules
+
+	# modprobe 88XXau
 endef
 
 $(eval $(generic-package))
